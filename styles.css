@@ -1,0 +1,295 @@
+/* Base styles and variables */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fixed-width container */
+.container {
+    width: 980px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none;
+    color: #146EB4;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.section-title {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    text-align: center;
+    position: relative;
+    color: #232F3E;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FF9900;
+}
+
+section {
+    padding: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #232F3E;
+    height: 60px;
+    display: table;
+    width: 100%;
+}
+
+.logo {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF9900;
+    margin: 15px 0 0 40px;
+}
+
+.nav-links {
+    float: right;
+    margin-right: 40px;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: 500;
+    line-height: 60px;
+    display: block;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #FF9900;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(35, 47, 62, 0.9), rgba(35, 47, 62, 0.8)), url('https://images.unsplash.com/photo-1560732488-7b5f5b8831b7') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin: 0 0 10px 0;
+}
+
+.hero h2 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    color: #FF9900;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 0 0 30px 0;
+}
+
+.cta-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 10px;
+}
+
+.btn.primary {
+    background-color: #FF9900;
+    color: #232F3E;
+}
+
+.btn.secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn.primary:hover {
+    background-color: #e68a00;
+}
+
+.btn.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* About Section */
+.about-content {
+    width: 100%;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Experience Section */
+.job {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.job h3 {
+    color: #232F3E;
+    font-size: 20px;
+    margin: 0 0 5px 0;
+}
+
+.job-meta {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.job-meta .company {
+    font-weight: bold;
+}
+
+.job-meta span {
+    margin-right: 15px;
+}
+
+.job-description {
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+
+.job-description li {
+    margin-bottom: 10px;
+    list-style-type: disc;
+}
+
+/* Education Section */
+.education-item {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.education-item h3 {
+    color: #232F3E;
+    margin: 0 0 10px 0;
+}
+
+.cert-title {
+    text-align: center;
+    margin: 30px 0 20px 0;
+    color: #232F3E;
+}
+
+.certifications {
+    width: 600px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.cert-icon {
+    width: 40px;
+    color: #FF9900;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.cert-details {
+    padding: 10px;
+}
+
+.cert-details h4 {
+    margin: 0 0 5px 0;
+    color: #232F3E;
+}
+
+.cert-details p {
+    margin: 0;
+    color: #777;
+}
+
+/* Skills Section */
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.skill-category {
+    vertical-align: top;
+    padding: 10px 20px;
+    width: 50%;
+}
+
+.skill-category h3 {
+    color: #232F3E;
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid #FF9900;
+    padding-bottom: 5px;
+}
+
+.skill-items {
+    display: block;
+}
+
+.skill-item {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    margin: 0 5px 5px 0;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+/* Contact Section */
+.contact-info {
+    width: 600px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.contact-label {
+    width: 100px;
+    font-weight: bold;
+    padding: 10px;
+    vertical-align: top;
+    color: #232F3E;
+}
+
+.contact-value {
+    padding: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #232F3E;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
