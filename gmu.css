@@ -1,1 +1,140 @@
-/* GMU Colors */ :root{ --gmu-green: #006633; --gmu-yellow: #FFCC33; --gmu-gray-bg: #f5f6f7; /* light gray option */ } /* Body background requirement */ body { background: var(--gmu-gray-bg); } /* h1 in GMU Green requirement */ h1, .text-gmu-green { color: var(--gmu-green) !important; } /* Custom class you can use anywhere */ .gmu-highlight { background: var(--gmu-yellow); color: #222; padding: .25rem .5rem; border-radius: .375rem; } /* Header box w/ border + shadow requirement */ .gmu-header-box { border: 5px solid var(--gmu-green); /* 5px solid green border */ box-shadow: 0 10px 25px rgba(0,0,0,.08); /* your stylistic choice */ background: #fff; } /* Green button & table header accents */ .btn-gmu { background: var(--gmu-green); color: #fff; border: none; } .btn-gmu:hover { background: #005228; color: #fff; } .table-gmu th { background: var(--gmu-yellow); color: #222; } /* Fieldsets / Legends for nice grouping */ .gmu-fieldset { padding: 1rem 1.25rem; background: #fff; border: 1px solid #e5e7eb; border-radius: .5rem; } .gmu-legend { font-weight: 600; color: var(--gmu-green); padding: 0 .25rem; } /* Required field visual indicator */ .required::after { content: " *"; color: #d11; margin-left: .15rem; font-weight: 700; } /* Inputs focus styles */ input:focus, select:focus, textarea:focus { outline: none; box-shadow: 0 0 0 .2rem rgba(0,102,51,.15); border-color: var(--gmu-green); }
+/* =========================
+   GMU Colors (Root Vars)
+   ========================= */
+:root {
+  --gmu-green: #006633;
+  --gmu-yellow: #FFCC33;
+  --gmu-gray-bg: #f5f6f7; /* light gray option */
+}
+
+/* =========================
+   Base
+   ========================= */
+body {
+  background: var(--gmu-gray-bg);
+}
+
+/* Headings in GMU Green */
+h1,
+.text-gmu-green {
+  color: var(--gmu-green) !important;
+}
+
+/* Highlight utility */
+.gmu-highlight {
+  background: var(--gmu-yellow);
+  color: #222;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+}
+
+/* =========================
+   Containers
+   ========================= */
+.gmu-header-box {
+  border: 5px solid var(--gmu-green); /* 5px solid green border */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* stylistic choice */
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+.btn-gmu {
+  background: var(--gmu-green);
+  color: #fff;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.875rem;
+  cursor: pointer;
+}
+
+.btn-gmu:hover {
+  background: #005228;
+  color: #fff;
+}
+
+.btn-gmu:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 51, 0.3);
+}
+
+.btn-gmu:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Tables
+   ========================= */
+.table-gmu th {
+  background: var(--gmu-yellow);
+  color: #222;
+}
+
+.table-gmu th,
+.table-gmu td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.5rem 0.75rem;
+}
+
+/* =========================
+   Fieldsets / Legends
+   ========================= */
+.gmu-fieldset {
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+.gmu-legend {
+  font-weight: 600;
+  color: var(--gmu-green);
+  padding: 0 0.25rem;
+}
+
+/* =========================
+   Required Indicator
+   ========================= */
+.required::after {
+  content: " *";
+  color: #d11;
+  margin-left: 0.15rem;
+  font-weight: 700;
+}
+
+/* =========================
+   Form Controls
+   ========================= */
+input,
+select,
+textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.625rem;
+  background: #fff;
+  color: #111827;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 51, 0.15);
+  border-color: var(--gmu-green);
+}
+
+/* Prefer reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
