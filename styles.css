@@ -239,3 +239,42 @@ footer {
     display: none;
   }
 }
+
+/* center each logical page section */
+.content-section {
+  max-width: 1000px;      /* pick a width you like */
+  margin: 2rem auto;      /* centers horizontally */
+  padding: 2rem;
+  background: #fff;       /* optional “card” look */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+} 
+@media print {
+  .content-section {
+    box-shadow: none;     /* no shadows on paper */
+    page-break-inside: avoid; /* keep section on one page */
+  }
+}
+
+/* 1) Hard-center the section's inner container */
+.content-section > .container {
+  max-width: 960px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 2) Make sure main isn't forcing a left start */
+main { display: block !important; }
+
+/* 3) Neutralize Bootstrap .row gutter hacks used inside your lists */
+.content-section .list .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  --bs-gutter-x: 0;
+}
+
+/* Optional: give the whole section a subtle card look and spacing */
+.content-section {
+  padding: 2rem 1rem;
+}
+
