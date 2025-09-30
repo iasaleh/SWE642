@@ -5,7 +5,7 @@
   --muted: #9fb3c8;
   --text: #e6edf3;
   --brand: #1f9cf0;
-  --chip: #1a2330;
+  --chip: #1070f7;
   --border: #223042;
 }
 
@@ -182,7 +182,7 @@ main {
   gap: 8px;
 }
 
-.company,
+
 .role {
   font-weight: 700;
 }
