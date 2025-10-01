@@ -49,6 +49,7 @@
   <!-- End Navigation Bar -->
 
   <main>
+      <!-- Resume Section -->
     <section id="resume" class="content-section">
       <div class="container">
         <header>
@@ -119,6 +120,210 @@
         </section>
       </div>
     </section>
+      <!-- End Resume Secion -->
+
+      <!-- Survey Section -->
+    <section id="survey" class="content-section" style="display:none">
+
+      <p>
+      Thanks for visiting! Please complete this short survey to help us improve the prospective student experience.
+    </p>
+
+    <form class="needs-validation" action="#" method="post" autocomplete="on" novalidate>
+      <!-- Contact Info -->
+      <fieldset class="gmu-fieldset mb-4">
+        <legend class="gmu-legend">Your Information</legend>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="username" class="form-label required">Full Name</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="e.g., Jordan Lee" required autofocus>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="email" class="form-label required">Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+
+          <div class="col-md-8">
+            <label for="street" class="form-label required">Street Address</label>
+            <input type="text" id="street" name="street" class="form-control" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">Street address is required.</div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="city" class="form-label required">City</label>
+            <input type="text" id="city" name="city" class="form-control" placeholder="Fairfax" required>
+            <div class="invalid-feedback">City is required.</div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="state" class="form-label required">State</label>
+            <input type="text" id="state" name="state" class="form-control" placeholder="VA" maxlength="2" pattern="[A-Za-z]{2}" required>
+            <div class="form-text">Use 2-letter code (e.g., VA)</div>
+            <div class="invalid-feedback">Enter a valid 2-letter state code.</div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="zip" class="form-label required">ZIP</label>
+            <input type="text" id="zip" name="zip" class="form-control" placeholder="22030" pattern="\d{5}" required>
+            <div class="invalid-feedback">Enter a 5-digit ZIP code.</div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="phone" class="form-label required">Telephone</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 555-5555" required>
+            <div class="invalid-feedback">Telephone is required.</div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="url" class="form-label">Personal/Portfolio URL</label>
+            <input type="url" id="url" name="url" class="form-control" placeholder="https://example.com">
+            <div class="form-text">Optional</div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="surveyDate" class="form-label required">Date of Survey</label>
+            <input type="date" id="surveyDate" name="surveyDate" class="form-control" required>
+            <div class="invalid-feedback">Please select a date.</div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Campus Likes -->
+      <fieldset class="gmu-fieldset mb-4">
+        <legend class="gmu-legend">What did you like most?</legend>
+        <div class="row gy-2">
+          <!-- Ensure labels toggle inputs via 'for' -->
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-students" name="likes" value="students">
+              <label class="form-check-label" for="like-students">Students</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-location" name="likes" value="location">
+              <label class="form-check-label" for="like-location">Location</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-campus" name="likes" value="campus">
+              <label class="form-check-label" for="like-campus">Campus</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-atmosphere" name="likes" value="atmosphere">
+              <label class="form-check-label" for="like-atmosphere">Atmosphere</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-dorms" name="likes" value="dorm rooms">
+              <label class="form-check-label" for="like-dorms">Dorm Rooms</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-sports" name="likes" value="sports">
+              <label class="form-check-label" for="like-sports">Sports</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Interest Source (radios) -->
+      <fieldset class="gmu-fieldset mb-4">
+        <legend class="gmu-legend required">How did you become interested in GMU?</legend>
+        <div class="row gy-2">
+          <div class="col-6 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="src-friends" name="interestSource" value="friends" required>
+              <label class="form-check-label" for="src-friends">Friends</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="src-tv" name="interestSource" value="television">
+              <label class="form-check-label" for="src-tv">Television</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="src-internet" name="interestSource" value="internet">
+              <label class="form-check-label" for="src-internet">Internet</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="src-other" name="interestSource" value="other">
+              <label class="form-check-label" for="src-other">Other</label>
+            </div>
+          </div>
+          <div class="invalid-feedback d-block">Please select an option.</div>
+        </div>
+      </fieldset>
+
+      <!-- Grad Month (datalist) + Year -->
+      <fieldset class="gmu-fieldset mb-4">
+        <legend class="gmu-legend">High School Graduation</legend>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="gradMonth" class="form-label required">Graduation Month</label>
+            <input list="months" id="gradMonth" name="gradMonth" class="form-control" placeholder="Start typing month…" required>
+            <datalist id="months">
+              <option value="January"><option value="February"><option value="March">
+              <option value="April"><option value="May"><option value="June">
+              <option value="July"><option value="August"><option value="September">
+              <option value="October"><option value="November"><option value="December">
+            </datalist>
+            <div class="invalid-feedback">Please choose a month.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="gradYear" class="form-label required">Graduation Year</label>
+            <input type="text" id="gradYear" name="gradYear" class="form-control" placeholder="YYYY" pattern="(19|20)\d{2}" required>
+            <div class="invalid-feedback">Enter a 4-digit year (e.g., 2026).</div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Recommendation Likelihood (select) -->
+      <fieldset class="gmu-fieldset mb-4">
+        <legend class="gmu-legend required">Likelihood of Recommending GMU</legend>
+        <div class="col-md-6">
+          <label for="recommend" class="form-label required">Select one</label>
+          <select id="recommend" name="recommend" class="form-select" required>
+            <option value="" selected disabled>— Choose an option —</option>
+            <option value="Very Likely">Very Likely</option>
+            <option value="Likely">Likely</option>
+            <option value="Unlikely">Unlikely</option>
+          </select>
+          <div class="invalid-feedback">Please select one option.</div>
+        </div>
+      </fieldset>
+
+      <!-- Comments -->
+      <fieldset class="gmu-fieldset mb-4">
+        <legend class="gmu-legend">Additional Comments</legend>
+        <label for="comments" class="form-label">Comments</label>
+        <textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Tell us anything else about your visit…"></textarea>
+      </fieldset>
+
+      <div class="d-flex gap-3">
+        <button type="submit" class="btn btn-gmu">Submit Survey</button>
+        <a href="index.html" class="btn btn-outline-secondary">Back to Info</a>
+      </div>
+    </form>
+
+    </section>
+      <!-- End Survey Section -->
+
+
+
   </main>
 
   <script>
