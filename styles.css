@@ -101,6 +101,7 @@ h1 {
 
 .btn:hover {
   filter: brightness(1.1);
+  background-color: #0b74d0;
 }
 
 .btn.primary {
@@ -278,3 +279,32 @@ main { display: block !important; }
   padding: 2rem 1rem;
 }
 
+.form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .output {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .previous-user {
+            font-size: 3em;
+            color: #555;
+        }
