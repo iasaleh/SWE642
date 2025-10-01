@@ -1,69 +1,610 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Inam Ahmad Saleh – Resume</title>
-<meta name="description" content="Resume website for Inam Ahmad Saleh – Cloud Engineer (Java, Python)." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inam Ahmad Saleh – Resume</title>
+  <meta name="description" content="Resume website for Inam Ahmad Saleh – Cloud Engineer (Java, Python)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Bootstrap CSS and JS for navigation -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
-<div class="container">
-<header>
-<div class="title">
-<div>
-<h1>Inam Ahmad Saleh</h1>
-<div class="subtitle">Cloud Engineer · Java · Python</div>
-</div>
-</div>
-<nav class="actions" aria-label="quick actions">
-<a class="btn primary" href="Profile.pdf" download>⬇︎ Download PDF</a>
-<a class="btn" href="mailto:inamahmadsaleh@gmail.com">✉️ Email</a>
-<a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/inam-ahmad-saleh-448215167/"> LinkedIn /inam-ahmad-saleh</a>
-</nav>
-</header>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-target="resume">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-target="survey">Survey</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-target="contact">Contact</a>
+          </li>
+        </ul>
+
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navigation Bar -->
+
+  <main>
+      <!-- Resume Section -->
+    <section id="resume" class="content-section">
+      <div class="container">
+        <header>
+          <div class="title">
+            <div>
+              <h1>Inam Ahmad Saleh</h1>
+              <div class="subtitle">Cloud Engineer · Java · Python</div>
+            </div>
+          </div>
+          <nav class="actions" aria-label="quick actions">
+            <a class="btn primary" href="Profile.pdf" download>⬇︎ Download PDF</a>
+            <a class="btn" href="mailto:inamahmadsaleh@gmail.com">✉️ Email</a>
+            <a class="btn" target="_blank" rel="noopener" 
+               href="https://www.linkedin.com/in/inam-ahmad-saleh-448215167/">in /inam-ahmad-saleh</a>
+          </nav>
+        </header>
+
+        <aside class="card" aria-label="sidebar with contact and skills">
+          <h2>Contact</h2>
+          <ul class="list">
+            <li class="row"><span>📍</span> <span class="muted">Springfield / Woodbridge, VA</span></li>
+            <li class="row"><span>📞</span> <a href="tel:+15712987458">(571) 298-7458</a></li>
+            <li class="row"><span>✉️</span> <a href="mailto:inamahmadsaleh@gmail.com">inamahmadsaleh@gmail.com</a></li>
+            <li class="row"><span>🔗</span> 
+              <a target="_blank" rel="noopener" 
+                 href="https://www.linkedin.com/in/inam-ahmad-saleh-448215167/">LinkedIn Profile</a>
+            </li>
+          </ul>
+
+          <div style="height:14px"></div>
+
+          <h2>Top Skills</h2>
+          <div class="grid-chips">
+            <span class="chip">Cloud Infrastructure</span>
+            <span class="chip">Amazon VPC</span>
+            <span class="chip">Networking</span>
+            <span class="chip">Java</span>
+            <span class="chip">Python</span>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <h2>Certifications</h2>
+          <ul class="list">
+            <li>Operating Systems and You: Becoming a Power User</li>
+            <li>The Bits and Bytes of Computer Networking</li>
+            <li>System Administration and IT Infrastructure Services</li>
+            <li>CompTIA CySA+ (CS0-002) – Vulnerability Management (prep)</li>
+          </ul>
+        </aside>
+
+        <section class="card" aria-label="main resume content">
+          <h2>Summary</h2>
+          <p>Hello there! I'm Inam, a Cloud Engineer and a Master of Information Systems student at George Mason University. 
+            With a Bachelor's in Information Technology, I architect scalable, secure solutions and optimize cloud infrastructure. 
+            I enjoy automating ops work and learning new tech.</p>
+
+          <div style="height:14px"></div>
+
+          <h2>Experience</h2>
+          <article class="item">
+            <ul>
+              <li><div class="role">Cloud Engineer at Amazon Web Services (AWS)</div></li>
+              <li><div class="role">SharePoint Administrator at General Dynamics Information Technology (GDIT)</div></li>
+              <li><div class="role">Cyber Security Intern at United States Trade and Development Agency (USTDA)</div></li>
+            </ul>
+          </article>
+        </section>
+      </div>
+    </section>
+      <!-- End Resume Secion -->
 
 
-<main>
-<aside class="card" aria-label="sidebar with contact and skills">
-<h2>Contact</h2>
-<ul class="list">
-<li class="row"><span>📍</span> <span class="muted">Springfield / Woodbridge, VA</span></li>
-<li class="row"><span>📞</span> <a href="tel:+15712987458">(571) 298-7458</a></li>
-<li class="row"><span>✉️</span> <a href="mailto:inamahmadsaleh@gmail.com">inamahmadsaleh@gmail.com</a></li>
-<li class="row"><span>🔗</span> <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/inam-ahmad-saleh-448215167/">LinkedIn Profile</a></li>
-</ul>
-<div style="height:14px"></div>
-<h2>Top Skills</h2>
-<div class="grid-chips">
-<span class="chip">Cloud Infrastructure</span>
-<span class="chip">Amazon VPC</span>
-<span class="chip">Networking</span>
-<span class="chip">Java</span>
-<span class="chip">Python</span>
-</div>
-<div style="height:14px"></div>
-<h2>Certifications</h2>
-<ul class="list">
-<li>Operating Systems and You: Becoming a Power User</li>
-<li>The Bits and Bytes of Computer Networking</li>
-<li>System Administration and IT Infrastructure Services</li>
-<li>CompTIA CySA+ (CS0-002) – Vulnerability Management (prep)</li>
-</ul>
-</aside>
 
 
-<section class="card" aria-label="main resume content">
-<h2>Summary</h2>
-<p>Hello there! I'm Inam, a Cloud Engineer and a Master of Information Systems student at George Mason University. With a Bachelor's in Information Technology, I architect scalable, secure solutions and optimize cloud infrastructure. I enjoy automating ops work and learning new tech.</p>
+
+      <!-- Survey Section -->
+    <section id="survey" class="content-section" style="display:none">
+
+      <p>
+      Thanks for visiting! Please complete this short survey to help us improve the prospective student experience.
+    </p>
+
+    <form class="needs-validation" action="#" method="post" autocomplete="on" novalidate>
+      <!-- Contact Info -->
+      <fieldset class="gmu-fieldset mb-4">
+        <div class="row g-3"><span id="previous-user" class="previous-user"> </span> </div>
+
+        <legend class="gmu-legend">Your Information</legend>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="username" class="form-label required">Full Name</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="e.g., Jordan Lee" required autofocus>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="email" class="form-label required">Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+
+          <div class="col-md-7">
+            <label for="street" class="form-label required">Street Address</label>
+            <input type="text" id="street" name="street" class="form-control" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">Street address is required.</div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="zipcode" class="form-label required">ZIP</label>
+            <input type="text" id="zipcode" name="zip" class="form-control" placeholder="22030" pattern="\d{5}" required> 
+            <div class="invalid-feedback">Enter a 5-digit ZIP code.</div>
+          </div>
+
+          <div id="location-result" class="col-md-4">
+            <p><strong>City:</strong> <span id="result-city"></span></p>
+            <p><strong>State:</strong> <span id="result-state"></span></p>
+            <div id="error-location-message" class="error">Unable to find location information. Please check the zip code and try again.</div>
+          </div>
 
 
-<div style="height:14px"></div>
-<h2>Experience</h2>
-<article class="item">
-<div class="split">
-<div class="role">Cloud Engineer · <span class="company">Amazon Web Services (AWS)</span></div>
+
+          <!-- HW2 added Section for ZIP Code and City finder -->
+
+          <script>
+            // Debounce function to prevent too many API calls while typing
+            function debounce(func, delay) {
+                let timeout;
+                return function() {
+                    const context = this;
+                    const args = arguments;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(context, args), delay);
+                };
+            }
+
+            // Function to look up location data
+            async function lookupLocation() {
+                const zipcode = document.getElementById('zipcode').value.trim();
+                const cityField = document.getElementById('result-city');
+                const stateField = document.getElementById('result-state');
+                const errorDiv = document.getElementById('error-location-message');
+                
+                // Clear previous results and errors
+                cityField.textContent = '';
+                stateField.textContent = '';
+                errorDiv.style.display = 'none';
+                
+                // Check if zipcode is empty or too short
+                if (!zipcode || zipcode.length < 5) {
+                    return;
+                }
+                
+                try {
+                    // Make API request to get location data from zipcode
+                    const response = await fetch(`https://api.zippopotam.us/us/${zipcode}`);
+                    
+                    if (!response.ok) {
+                        throw new Error('Invalid zip code or location not found');
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Display the results directly in the output fields
+                    cityField.textContent = data.places[0]['place name'];
+                    stateField.textContent = data.places[0]['state'];
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    errorDiv.textContent = 'Unable to find location information. Please check the zip code and try again.';
+                    errorDiv.style.display = 'block';
+                }
+            }
+
+            // Create debounced version of the lookup function (wait 500ms after typing stops)
+            const debouncedLookup = debounce(lookupLocation, 500);
+
+            // Add event listeners to input fields
+            document.getElementById('zipcode').addEventListener('input', debouncedLookup);
+            document.getElementById('zipcode').addEventListener('blur', lookupLocation);
+          </script>
+          <!-- End of HW2 added Section for ZIP Code and City finder -->
+
+
+
+
+
+          <div class="col-md-4">
+            <label for="phone" class="form-label required">Telephone</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 555-5555" required>
+            <div class="invalid-feedback">Telephone is required.</div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="url" class="form-label">Personal/Portfolio URL</label>
+            <input type="url" id="url" name="url" class="form-control" placeholder="https://example.com">
+            <div class="form-text">Optional</div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="surveyDate" class="form-label required">Date of Survey</label>
+            <input type="date" id="surveyDate" name="surveyDate" class="form-control" required>
+            <div class="invalid-feedback">Please select a date.</div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Campus Likes -->
+      <fieldset class="gmu-fieldset mb-4">
+        <legend class="gmu-legend">What did you like most?</legend>
+        <div class="row gy-2">
+          <!-- Ensure labels toggle inputs via 'for' -->
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-students" name="likes" value="students">
+              <label class="form-check-label" for="like-students">Students</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-location" name="likes" value="location">
+              <label class="form-check-label" for="like-location">Location</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-campus" name="likes" value="campus">
+              <label class="form-check-label" for="like-campus">Campus</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-atmosphere" name="likes" value="atmosphere">
+              <label class="form-check-label" for="like-atmosphere">Atmosphere</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-dorms" name="likes" value="dorm rooms">
+              <label class="form-check-label" for="like-dorms">Dorm Rooms</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="like-sports" name="likes" value="sports">
+              <label class="form-check-label" for="like-sports">Sports</label>
+            </div>
+          </div>
+          <div id="likes-feedback" class="invalid-feedback" style="display: none;">Please select at least two options.</div>
+      </fieldset>
+
+      <!-- Script to validate at least two text box are checked-->
+       <script>
+        // Get the form element
+        const form = document.querySelector('form.needs-validation');
+        
+        // Add submit event listener
+        form.addEventListener('submit', function(event) {
+          // Check the number of selected checkboxes in the "likes" group
+          const selectedLikes = document.querySelectorAll('input[name="likes"]:checked');
+          const likesFeedback = document.getElementById('likes-feedback');
+          
+          // If fewer than 2 options are selected
+          if (selectedLikes.length < 2) {
+            event.preventDefault(); // Prevent form submission
+            event.stopPropagation();
+            likesFeedback.style.display = 'block'; // Show the error message
+          } else {
+            likesFeedback.style.display = 'none'; // Hide the error message
+          }
+          
+          // Bootstrap's built-in validation
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          
+          form.classList.add('was-validated');
+        }, false);
+        
+        // Also add change event listeners to hide the error once enough options are selected
+        const likeCheckboxes = document.querySelectorAll('input[name="likes"]');
+        likeCheckboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', function() {
+            const selectedLikes = document.querySelectorAll('input[name="likes"]:checked');
+            const likesFeedback = document.getElementById('likes-feedback');
+            
+            if (selectedLikes.length >= 2) {
+              likesFeedback.style.display = 'none';
+            }
+          });
+        });
+      </script>
+      <!-- End of Script to validate at least two text box are checked-->
+
+      <!-- Interest Source (radios) -->
+      <fieldset class="gmu-fieldset mb-4">
+        <legend class="gmu-legend required">How did you become interested in GMU?</legend>
+        <div class="row gy-2">
+          <div class="col-6 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="src-friends" name="interestSource" value="friends" required>
+              <label class="form-check-label" for="src-friends">Friends</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="src-tv" name="interestSource" value="television">
+              <label class="form-check-label" for="src-tv">Television</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="src-internet" name="interestSource" value="internet">
+              <label class="form-check-label" for="src-internet">Internet</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="src-other" name="interestSource" value="other">
+              <label class="form-check-label" for="src-other">Other</label>
+            </div>
+          </div>
+          <div class="invalid-feedback">Please select an option.</div>
+        </div>
+      </fieldset>
+
+      <!-- Grad Month (datalist) + Year -->
+      <fieldset class="gmu-fieldset mb-4">
+        <legend class="gmu-legend">High School Graduation</legend>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="gradMonth" class="form-label required">Graduation Month</label>
+            <input list="months" id="gradMonth" name="gradMonth" class="form-control" placeholder="Start typing month…" required>
+            <datalist id="months">
+              <option value="January"><option value="February"><option value="March">
+              <option value="April"><option value="May"><option value="June">
+              <option value="July"><option value="August"><option value="September">
+              <option value="October"><option value="November"><option value="December">
+            </datalist>
+            <div class="invalid-feedback">Please choose a month.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="gradYear" class="form-label required">Graduation Year</label>
+            <input type="text" id="gradYear" name="gradYear" class="form-control" placeholder="YYYY" pattern="(19|20)\d{2}" required>
+            <div class="invalid-feedback">Enter a 4-digit year (e.g., 2026).</div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Recommendation Likelihood (select) -->
+      <fieldset class="gmu-fieldset mb-4">
+        <legend class="gmu-legend required">Likelihood of Recommending GMU</legend>
+        <div class="col-md-6">
+          <label for="recommend" class="form-label required">Select one</label>
+          <select id="recommend" name="recommend" class="form-select" required>
+            <option value="" selected disabled>— Choose an option —</option>
+            <option value="Very Likely">Very Likely</option>
+            <option value="Likely">Likely</option>
+            <option value="Unlikely">Unlikely</option>
+          </select>
+          <div class="invalid-feedback">Please select one option.</div>
+        </div>
+      </fieldset>
+
+      <!-- Comments -->
+      <fieldset class="gmu-fieldset mb-4">
+        <legend class="gmu-legend">Additional Comments</legend>
+        <label for="comments" class="form-label">Comments</label>
+        <textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Tell us anything else about your visit…"></textarea>
+      </fieldset>
+
+      <!-- Submit and Reset buttons -->
+      <div class="d-flex gap-3">
+        <button type="submit" class="btn btn-outline-success">Submit Survey</button>
+        <button type="reset" class="btn btn-outline-danger">Reset Form</button>
+        <a href="index.html" class="btn btn-outline-secondary">Back to Info</a>
+      </div>
+
+      
+    </form>
+
+
+      <!-- HW2 added Section for number validation Section -->
+
+    <div class="form-group">
+        <label for="calculation-data">Data (Enter 10 comma-separated numbers from 1-100):</label>
+        <input type="text" id="calculation-data" name="data" placeholder="e.g., 45,67,89,12,34,56,78,90,23,45">
+        <div id="error-number-validation-message" class="error">Please enter 10 or more comma-separated numbers between 1 and 100.</div>
+    </div>
+    
+    <div class="form-group">
+        <label for="average">Average:</label>
+        <div id="average" class="output"></div>
+    </div>
+    
+    <div class="form-group">
+        <label for="maximum">Maximum:</label>
+        <div id="maximum" class="output"></div>
+    </div>
+
+    <script>
+        document.getElementById('calculation-data').addEventListener('blur', function() {
+            const dataInput = this.value.trim();
+            const errorElement = document.getElementById('error-number-validation-message');
+            const averageOutput = document.getElementById('average');
+            const maximumOutput = document.getElementById('maximum');
+            
+            // Clear previous results
+            averageOutput.textContent = '';
+            maximumOutput.textContent = '';
+            errorElement.style.display = 'none';
+            
+            // Parse the input
+            const numbers = dataInput.split(',').map(num => parseInt(num.trim(), 10));
+            
+            // Validate input
+            const isValid = validateInput(numbers);
+            
+            if (isValid) {
+                // Calculate and display results
+                averageOutput.textContent = calculateAverage(numbers);
+                maximumOutput.textContent = findMaximum(numbers);
+            } else {
+                // Show error message
+                errorElement.style.display = 'block';
+            }
+        });
+        
+        function validateInput(numbers) {
+            // Check if there are at least 10 numbers
+            if (numbers.length < 10) {
+                return false;
+            }
+            
+            // Check if all values are valid numbers between 1 and 100
+            for (let num of numbers) {
+                if (isNaN(num) || num < 1 || num > 100) {
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+        
+        function calculateAverage(numbers) {
+            const sum = numbers.reduce((total, num) => total + num, 0);
+            return (sum / numbers.length).toFixed(2);
+        }
+        
+        function findMaximum(numbers) {
+            return Math.max(...numbers);
+        }
+    </script>
+      <!-- End of HW2 added Section for number validation Section -->
+
+    </section>
+      <!-- End Survey Section -->
+
+
+
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll(".nav-link[data-target]");
+      const sections = document.querySelectorAll(".content-section");
+
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Remove active class from all links
+          links.forEach(l => l.classList.remove("active"));
+
+          // Add active class to the clicked link
+          link.classList.add("active");
+
+          // Hide all sections
+          sections.forEach(sec => sec.style.display = "none");
+
+          // Show the clicked section
+          const target = document.getElementById(link.dataset.target);
+          if (target) target.style.display = "block";
+        });
+      });
+    });
+
+
+
+
+
+
+//The Below code is added for HW2 to save username in cookie and display welcome message if cookie exists
+
+  // Function to set a cookie
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Function to get a cookie value by name
+function getCookie(name) {
+    const cookieName = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookie.split(';');
+    
+    for(let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(cookieName) === 0) {
+            return cookie.substring(cookieName.length, cookie.length);
+        }
+    }
+    return "";
+}
+
+// Function to check if username cookie exists and update the previous-user span
+function checkUsernameCookie() {
+    const username = getCookie("username");
+    if (username !== "") {
+        // Update the existing span with ID "previous-user"
+        const previousUserSpan = document.getElementById("previous-user");
+        if (previousUserSpan) {
+            previousUserSpan.textContent = `Welcome, ${username}!`;
+        }
+    }
+}
+
+// Save username when form is submitted
+document.addEventListener("DOMContentLoaded", function() {
+    // Check for existing cookie on page load
+    checkUsernameCookie();
+    
+    // Add submit event listener to the form
+    const form = document.querySelector("form.needs-validation");
+    if (form) {
+        form.addEventListener("submit", function() {
+            const usernameInput = document.getElementById("username");
+            if (usernameInput && usernameInput.value.trim() !== "") {
+                // Save username to cookie for 30 days
+                setCookie("username", usernameInput.value.trim(), 30);
+            }
+        });
+    }
+});
+
+
+    
+
+   </script>
+</body>
 </html>
