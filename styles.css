@@ -5,7 +5,7 @@
   --muted: #9fb3c8;
   --text: #e6edf3;
   --brand: #1f9cf0;
-  --chip: #1a2330;
+  --chip: #1070f7;
   --border: #223042;
 }
 
@@ -101,6 +101,7 @@ h1 {
 
 .btn:hover {
   filter: brightness(1.1);
+  background-color: #0b74d0;
 }
 
 .btn.primary {
@@ -182,7 +183,7 @@ main {
   gap: 8px;
 }
 
-.company,
+
 .role {
   font-weight: 700;
 }
@@ -239,3 +240,71 @@ footer {
     display: none;
   }
 }
+
+/* center each logical page section */
+.content-section {
+  max-width: 1000px;      /* pick a width you like */
+  margin: 2rem auto;      /* centers horizontally */
+  padding: 2rem;
+  background: #fff;       /* optional “card” look */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+} 
+@media print {
+  .content-section {
+    box-shadow: none;     /* no shadows on paper */
+    page-break-inside: avoid; /* keep section on one page */
+  }
+}
+
+/* 1) Hard-center the section's inner container */
+.content-section > .container {
+  max-width: 960px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 2) Make sure main isn't forcing a left start */
+main { display: block !important; }
+
+/* 3) Neutralize Bootstrap .row gutter hacks used inside your lists */
+.content-section .list .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  --bs-gutter-x: 0;
+}
+
+/* Optional: give the whole section a subtle card look and spacing */
+.content-section {
+  padding: 2rem 1rem;
+}
+
+.form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .output {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .previous-user {
+            font-size: 3em;
+            color: #555;
+        }
