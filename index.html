@@ -122,6 +122,10 @@
     </section>
       <!-- End Resume Secion -->
 
+
+
+
+
       <!-- Survey Section -->
     <section id="survey" class="content-section" style="display:none">
 
@@ -132,6 +136,8 @@
     <form class="needs-validation" action="#" method="post" autocomplete="on" novalidate>
       <!-- Contact Info -->
       <fieldset class="gmu-fieldset mb-4">
+        <div class="row g-3"><span id="previous-user" class="previous-user"> </span> </div>
+
         <legend class="gmu-legend">Your Information</legend>
 
         <div class="row g-3">
@@ -147,30 +153,90 @@
             <div class="invalid-feedback">Please enter a valid email address.</div>
           </div>
 
-          <div class="col-md-8">
+          <div class="col-md-7">
             <label for="street" class="form-label required">Street Address</label>
             <input type="text" id="street" name="street" class="form-control" placeholder="1234 Main St" required>
             <div class="invalid-feedback">Street address is required.</div>
           </div>
 
           <div class="col-md-4">
-            <label for="city" class="form-label required">City</label>
-            <input type="text" id="city" name="city" class="form-control" placeholder="Fairfax" required>
-            <div class="invalid-feedback">City is required.</div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="state" class="form-label required">State</label>
-            <input type="text" id="state" name="state" class="form-control" placeholder="VA" maxlength="2" pattern="[A-Za-z]{2}" required>
-            <div class="form-text">Use 2-letter code (e.g., VA)</div>
-            <div class="invalid-feedback">Enter a valid 2-letter state code.</div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="zip" class="form-label required">ZIP</label>
-            <input type="text" id="zip" name="zip" class="form-control" placeholder="22030" pattern="\d{5}" required>
+            <label for="zipcode" class="form-label required">ZIP</label>
+            <input type="text" id="zipcode" name="zip" class="form-control" placeholder="22030" pattern="\d{5}" required> 
             <div class="invalid-feedback">Enter a 5-digit ZIP code.</div>
           </div>
+
+          <div id="location-result" class="col-md-4">
+            <p><strong>City:</strong> <span id="result-city"></span></p>
+            <p><strong>State:</strong> <span id="result-state"></span></p>
+            <div id="error-location-message" class="error">Unable to find location information. Please check the zip code and try again.</div>
+          </div>
+
+
+
+          <!-- HW2 added Section for ZIP Code and City finder -->
+
+          <script>
+            // Debounce function to prevent too many API calls while typing
+            function debounce(func, delay) {
+                let timeout;
+                return function() {
+                    const context = this;
+                    const args = arguments;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(context, args), delay);
+                };
+            }
+
+            // Function to look up location data
+            async function lookupLocation() {
+                const zipcode = document.getElementById('zipcode').value.trim();
+                const cityField = document.getElementById('result-city');
+                const stateField = document.getElementById('result-state');
+                const errorDiv = document.getElementById('error-location-message');
+                
+                // Clear previous results and errors
+                cityField.textContent = '';
+                stateField.textContent = '';
+                errorDiv.style.display = 'none';
+                
+                // Check if zipcode is empty or too short
+                if (!zipcode || zipcode.length < 5) {
+                    return;
+                }
+                
+                try {
+                    // Make API request to get location data from zipcode
+                    const response = await fetch(`https://api.zippopotam.us/us/${zipcode}`);
+                    
+                    if (!response.ok) {
+                        throw new Error('Invalid zip code or location not found');
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Display the results directly in the output fields
+                    cityField.textContent = data.places[0]['place name'];
+                    stateField.textContent = data.places[0]['state'];
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    errorDiv.textContent = 'Unable to find location information. Please check the zip code and try again.';
+                    errorDiv.style.display = 'block';
+                }
+            }
+
+            // Create debounced version of the lookup function (wait 500ms after typing stops)
+            const debouncedLookup = debounce(lookupLocation, 500);
+
+            // Add event listeners to input fields
+            document.getElementById('zipcode').addEventListener('input', debouncedLookup);
+            document.getElementById('zipcode').addEventListener('blur', lookupLocation);
+          </script>
+          <!-- End of HW2 added Section for ZIP Code and City finder -->
+
+
+
+
 
           <div class="col-md-4">
             <label for="phone" class="form-label required">Telephone</label>
@@ -233,8 +299,52 @@
               <label class="form-check-label" for="like-sports">Sports</label>
             </div>
           </div>
-        </div>
+          <div id="likes-feedback" class="invalid-feedback" style="display: none;">Please select at least two options.</div>
       </fieldset>
+
+      <!-- Script to validate at least two text box are checked-->
+       <script>
+        // Get the form element
+        const form = document.querySelector('form.needs-validation');
+        
+        // Add submit event listener
+        form.addEventListener('submit', function(event) {
+          // Check the number of selected checkboxes in the "likes" group
+          const selectedLikes = document.querySelectorAll('input[name="likes"]:checked');
+          const likesFeedback = document.getElementById('likes-feedback');
+          
+          // If fewer than 2 options are selected
+          if (selectedLikes.length < 2) {
+            event.preventDefault(); // Prevent form submission
+            event.stopPropagation();
+            likesFeedback.style.display = 'block'; // Show the error message
+          } else {
+            likesFeedback.style.display = 'none'; // Hide the error message
+          }
+          
+          // Bootstrap's built-in validation
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          
+          form.classList.add('was-validated');
+        }, false);
+        
+        // Also add change event listeners to hide the error once enough options are selected
+        const likeCheckboxes = document.querySelectorAll('input[name="likes"]');
+        likeCheckboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', function() {
+            const selectedLikes = document.querySelectorAll('input[name="likes"]:checked');
+            const likesFeedback = document.getElementById('likes-feedback');
+            
+            if (selectedLikes.length >= 2) {
+              likesFeedback.style.display = 'none';
+            }
+          });
+        });
+      </script>
+      <!-- End of Script to validate at least two text box are checked-->
 
       <!-- Interest Source (radios) -->
       <fieldset class="gmu-fieldset mb-4">
@@ -264,7 +374,7 @@
               <label class="form-check-label" for="src-other">Other</label>
             </div>
           </div>
-          <div class="invalid-feedback d-block">Please select an option.</div>
+          <div class="invalid-feedback">Please select an option.</div>
         </div>
       </fieldset>
 
@@ -313,11 +423,89 @@
         <textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Tell us anything else about your visit…"></textarea>
       </fieldset>
 
+      <!-- Submit and Reset buttons -->
       <div class="d-flex gap-3">
-        <button type="submit" class="btn btn-gmu">Submit Survey</button>
+        <button type="submit" class="btn btn-outline-success">Submit Survey</button>
+        <button type="reset" class="btn btn-outline-danger">Reset Form</button>
         <a href="index.html" class="btn btn-outline-secondary">Back to Info</a>
       </div>
+
+      
     </form>
+
+
+      <!-- HW2 added Section for number validation Section -->
+
+    <div class="form-group">
+        <label for="calculation-data">Data (Enter 10 comma-separated numbers from 1-100):</label>
+        <input type="text" id="calculation-data" name="data" placeholder="e.g., 45,67,89,12,34,56,78,90,23,45">
+        <div id="error-number-validation-message" class="error">Please enter 10 or more comma-separated numbers between 1 and 100.</div>
+    </div>
+    
+    <div class="form-group">
+        <label for="average">Average:</label>
+        <div id="average" class="output"></div>
+    </div>
+    
+    <div class="form-group">
+        <label for="maximum">Maximum:</label>
+        <div id="maximum" class="output"></div>
+    </div>
+
+    <script>
+        document.getElementById('calculation-data').addEventListener('blur', function() {
+            const dataInput = this.value.trim();
+            const errorElement = document.getElementById('error-number-validation-message');
+            const averageOutput = document.getElementById('average');
+            const maximumOutput = document.getElementById('maximum');
+            
+            // Clear previous results
+            averageOutput.textContent = '';
+            maximumOutput.textContent = '';
+            errorElement.style.display = 'none';
+            
+            // Parse the input
+            const numbers = dataInput.split(',').map(num => parseInt(num.trim(), 10));
+            
+            // Validate input
+            const isValid = validateInput(numbers);
+            
+            if (isValid) {
+                // Calculate and display results
+                averageOutput.textContent = calculateAverage(numbers);
+                maximumOutput.textContent = findMaximum(numbers);
+            } else {
+                // Show error message
+                errorElement.style.display = 'block';
+            }
+        });
+        
+        function validateInput(numbers) {
+            // Check if there are at least 10 numbers
+            if (numbers.length < 10) {
+                return false;
+            }
+            
+            // Check if all values are valid numbers between 1 and 100
+            for (let num of numbers) {
+                if (isNaN(num) || num < 1 || num > 100) {
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+        
+        function calculateAverage(numbers) {
+            const sum = numbers.reduce((total, num) => total + num, 0);
+            return (sum / numbers.length).toFixed(2);
+        }
+        
+        function findMaximum(numbers) {
+            return Math.max(...numbers);
+        }
+    </script>
+      <!-- End of HW2 added Section for number validation Section -->
 
     </section>
       <!-- End Survey Section -->
@@ -350,6 +538,73 @@
         });
       });
     });
-  </script>
+
+
+
+
+
+
+//The Below code is added for HW2 to save username in cookie and display welcome message if cookie exists
+
+  // Function to set a cookie
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Function to get a cookie value by name
+function getCookie(name) {
+    const cookieName = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookie.split(';');
+    
+    for(let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(cookieName) === 0) {
+            return cookie.substring(cookieName.length, cookie.length);
+        }
+    }
+    return "";
+}
+
+// Function to check if username cookie exists and update the previous-user span
+function checkUsernameCookie() {
+    const username = getCookie("username");
+    if (username !== "") {
+        // Update the existing span with ID "previous-user"
+        const previousUserSpan = document.getElementById("previous-user");
+        if (previousUserSpan) {
+            previousUserSpan.textContent = `Welcome, ${username}!`;
+        }
+    }
+}
+
+// Save username when form is submitted
+document.addEventListener("DOMContentLoaded", function() {
+    // Check for existing cookie on page load
+    checkUsernameCookie();
+    
+    // Add submit event listener to the form
+    const form = document.querySelector("form.needs-validation");
+    if (form) {
+        form.addEventListener("submit", function() {
+            const usernameInput = document.getElementById("username");
+            if (usernameInput && usernameInput.value.trim() !== "") {
+                // Save username to cookie for 30 days
+                setCookie("username", usernameInput.value.trim(), 30);
+            }
+        });
+    }
+});
+
+
+    
+
+   </script>
 </body>
 </html>
